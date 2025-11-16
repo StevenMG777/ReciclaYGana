@@ -87,7 +87,7 @@ $puntos = isset($usuario['puntos']) ? $usuario['puntos'] : 0;
                     <span class="info-value"><?php echo htmlspecialchars($usuario['nombre'] . ' ' . $usuario['apellido']); ?></span>
                 </div>
                 <div class="info-item">
-                    <span class="info-label">Usuario:</span>
+                    <span class="info-label">UsuariO:</span>
                     <span class="info-value"><?php echo htmlspecialchars($usuario['usuario']); ?></span>
                 </div>
                 <div class="info-item">
