@@ -1,0 +1,419 @@
+/* ============================================
+   HEADER STYLES
+   ============================================ */
+header {
+    background: white;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: var(--transition);
+}
+
+header.scrolled {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+.marcoencabezamiento {
+    border: none;
+    width: 100%;
+    background: linear-gradient(135deg, var(--primary-green), var(--hover-green));
+    margin: 0;
+}
+
+.textoencabezamiento {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.2rem 2rem;
+    gap: 1.2rem;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.textoencabezamiento h1 {
+    font-family: 'Arial Black', sans-serif;
+    font-size: clamp(1.3rem, 3.5vw, 2rem);
+    color: white;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    margin: 0;
+}
+
+.logo {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: var(--transition);
+    margin: 0;
+    object-fit: cover;
+}
+
+.logo:hover {
+    transform: scale(1.08) rotate(5deg);
+}
+
+/* ============================================
+   NAVEGACIÓN PROFESIONAL
+   ============================================ */
+nav {
+    background: white;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+nav .menu {
+    height: auto;
+    width: 100%;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 0.5rem;
+}
+
+nav ul li {
+    display: inline-block;
+    position: relative;
+}
+
+nav ul li a {
+    display: block;
+    padding: 1.1rem 1.8rem;
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.3px;
+    position: relative;
+    transition: var(--transition);
+    border-radius: 8px;
+}
+
+/* Hover Effect */
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    bottom: 0.6rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: var(--primary-green);
+    transition: var(--transition);
+}
+
+nav ul li a:hover {
+    color: var(--primary-green);
+}
+
+nav ul li a:hover::before {
+    width: 70%;
+}
+
+nav ul li a.active {
+    color: white;
+    background: var(--primary-green);
+}
+
+nav ul li a.active::before {
+    display: none;
+}
+
+/* ============================================
+   USER SESSION AREA
+   ============================================ */
+.user-session {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-left: auto;
+}
+
+.login-btn {
+    padding: 0.7rem 1.8rem;
+    background: var(--primary-green);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.login-btn:hover {
+    background: var(--hover-green);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(47, 169, 25, 0.3);
+}
+
+/* User Menu */
+.user-menu {
+    position: relative;
+}
+
+.user-button {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.7rem 1.2rem;
+    background: white;
+    border: 2px solid var(--primary-green);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 600;
+    color: var(--text-dark);
+    font-size: 0.9rem;
+}
+
+.user-button:hover {
+    background: rgba(47, 169, 25, 0.05);
+    border-color: var(--hover-green);
+}
+
+.user-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-green), var(--hover-green));
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 8px rgba(47, 169, 25, 0.3);
+}
+
+.user-dropdown {
+    position: absolute;
+    top: calc(100% + 0.8rem);
+    right: 0;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    min-width: 220px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: var(--transition);
+    z-index: 1000;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.user-menu.active .user-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.user-dropdown a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.3rem;
+    color: var(--text-dark);
+    text-decoration: none;
+    transition: var(--transition);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.user-dropdown a:last-child {
+    border-bottom: none;
+}
+
+.user-dropdown a:hover {
+    background: rgba(47, 169, 25, 0.05);
+    color: var(--primary-green);
+    padding-left: 1.8rem;
+}
+
+.user-dropdown a span:first-child {
+    font-size: 1.2rem;
+}
+
+/* ============================================
+   MENÚ MÓVIL
+   ============================================ */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1001;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background: var(--primary-green);
+    transition: var(--transition);
+    border-radius: 2px;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 1024px) {
+    nav ul li a {
+        padding: 1rem 1.3rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .textoencabezamiento {
+        padding: 1rem;
+        gap: 1rem;
+    }
+    
+    .textoencabezamiento h1 {
+        font-size: 1.2rem;
+    }
+    
+    .logo {
+        height: 50px;
+        width: 50px;
+    }
+    
+    .menu-toggle {
+        display: flex;
+    }
+    
+    nav .menu {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0;
+    }
+    
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+    }
+    
+    nav .menu.active ul {
+        display: flex;
+    }
+    
+    nav ul li {
+        width: 100%;
+    }
+    
+    nav ul li a {
+        padding: 1.2rem 1.5rem;
+        width: 100%;
+        border-radius: 0;
+    }
+    
+    nav ul li a::before {
+        display: none;
+    }
+    
+    .user-session {
+        width: 100%;
+        padding: 1rem 1.5rem;
+        justify-content: center;
+        border-top: 1px solid rgba(0, 0, 0, 0.06);
+    }
+    
+    .login-btn {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .user-dropdown {
+        position: static;
+        box-shadow: none;
+        border: none;
+        border-top: 1px solid rgba(0, 0, 0, 0.06);
+    }
+}
+
+@media (max-width: 480px) {
+    nav .menu {
+        padding: 0;
+    }
+    
+    .textoencabezamiento h1 {
+        font-size: 1rem;
+        letter-spacing: 1px;
+    }
+    
+    .logo {
+        height: 45px;
+        width: 45px;
+    }
+}
+
+/* ============================================
+   ANIMACIONES
+   ============================================ */
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+header {
+    animation: slideDown 0.5s ease-out;
+}
+
+nav ul li {
+    animation: fadeIn 0.6s ease-out backwards;
+}
+
+nav ul li:nth-child(1) { animation-delay: 0.1s; }
+nav ul li:nth-child(2) { animation-delay: 0.15s; }
+nav ul li:nth-child(3) { animation-delay: 0.2s; }
+nav ul li:nth-child(4) { animation-delay: 0.25s; }

@@ -1,0 +1,467 @@
+/* ============================================
+   PÁGINA PREMIOS
+   ============================================ */
+
+.seccion-premios {
+    width: 100%;
+    padding: 3rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* Hero Section */
+.premios-hero {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, rgba(47, 169, 25, 0.05), rgba(0, 240, 48, 0.05));
+    border-radius: var(--radius-lg);
+    margin-bottom: 3rem;
+}
+
+.seccion-premios > center > h1,
+.premios-hero h1 {
+    color: var(--primary-green);
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
+    margin-bottom: 1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.premios-subtitle {
+    color: var(--text-dark);
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.premios-description {
+    color: var(--text-gray);
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* Content Section */
+.contenido-premios {
+    width: 100%;
+    padding: 2rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+.container-premios {
+    width: 100%;
+    max-width: 1400px;
+}
+
+/* Category Section */
+.categoria-premio {
+    margin-bottom: 4rem;
+    padding: 2.5rem;
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+    animation: slideInLeft 0.6s ease-out backwards;
+}
+
+.categoria-premio:nth-child(even) {
+    animation: slideInRight 0.6s ease-out backwards;
+}
+
+.categoria-premio:hover {
+    box-shadow: var(--shadow-xl);
+}
+
+.categoria-premio h2 {
+    text-align: center;
+    color: var(--primary-green);
+    margin-bottom: 2.5rem;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.categoria-premio h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, var(--primary-green), transparent);
+    border-radius: 2px;
+}
+
+/* Grid de Premios */
+.grid-premios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 1rem 0;
+}
+
+/* Tarjeta de Premio */
+.tarjeta-premio {
+    background: white;
+    padding: 2.5rem;
+    border-radius: var(--radius-lg);
+    border: 2px solid #f0f0f0;
+    text-align: center;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.tarjeta-premio::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-green), var(--hover-green));
+    transform: scaleX(0);
+    transition: var(--transition);
+}
+
+.tarjeta-premio:hover::before {
+    transform: scaleX(1);
+}
+
+.tarjeta-premio:hover {
+    transform: translateY(-12px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--primary-green);
+}
+
+/* Premio Especial */
+.tarjeta-premio.especial {
+    background: linear-gradient(135deg, #fff8f0, #ffffff);
+    border: 3px solid var(--primary-green);
+    box-shadow: var(--shadow-md);
+}
+
+.tarjeta-premio.especial::after {
+    content: '⭐';
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* Icono del Premio */
+.icono-premio {
+    font-size: 4.5rem;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    transition: var(--transition);
+}
+
+.tarjeta-premio:hover .icono-premio {
+    transform: scale(1.2) rotateY(360deg);
+}
+
+/* Título del Premio */
+.tarjeta-premio h3 {
+    color: var(--primary-green);
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    margin: 1rem 0;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Descripción del Premio */
+.tarjeta-premio .descripcion {
+    color: var(--text-gray);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 1rem 0;
+    min-height: 50px;
+}
+
+/* Badge de Puntos */
+.tarjeta-premio .puntos {
+    background: linear-gradient(135deg, var(--primary-green), var(--hover-green));
+    color: white;
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    font-weight: 700;
+    padding: 0.8rem 2rem;
+    border-radius: var(--radius-xl);
+    display: inline-block;
+    margin-top: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.tarjeta-premio .puntos::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.tarjeta-premio:hover .puntos::before {
+    width: 300px;
+    height: 300px;
+}
+
+.tarjeta-premio:hover .puntos {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-md);
+}
+
+/* Botón Canjear */
+.btn-canjear {
+    width: 100%;
+    padding: 0.8rem;
+    margin-top: 1rem;
+    background: white;
+    color: var(--primary-green);
+    border: 2px solid var(--primary-green);
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-canjear:hover {
+    background: var(--primary-green);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Stats Section */
+.premios-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--bg-light), white);
+    border-radius: var(--radius-lg);
+}
+
+.stat-item {
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.stat-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.stat-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-green);
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    color: var(--text-gray);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+/* CTA Section */
+.inicio {
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.inicio a {
+    display: inline-block;
+    padding: 1.5rem 3rem;
+    background: linear-gradient(135deg, var(--primary-green), var(--hover-green));
+    color: white;
+    text-decoration: none;
+    border-radius: var(--radius-xl);
+    font-weight: 700;
+    transition: var(--transition);
+    box-shadow: var(--shadow-lg);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.inicio a:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: var(--shadow-xl);
+}
+
+.inicio h1 {
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+    margin: 0;
+    color: white;
+}
+
+/* Footer Message */
+.premios-footer {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--primary-green), var(--hover-green));
+    border-radius: var(--radius-lg);
+    color: white;
+    margin-top: 3rem;
+}
+
+.premios-footer h3 {
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    margin: 0;
+    color: white;
+}
+
+/* Filtros de Categorías */
+.premios-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.filter-btn {
+    padding: 0.75rem 1.5rem;
+    background: white;
+    color: var(--primary-green);
+    border: 2px solid var(--primary-green);
+    border-radius: var(--radius-xl);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--primary-green);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 1024px) {
+    .grid-premios {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .seccion-premios {
+        padding: 2rem 1rem;
+    }
+    
+    .premios-hero {
+        padding: 2rem 1rem;
+    }
+    
+    .categoria-premio {
+        padding: 2rem 1.5rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    .grid-premios {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .tarjeta-premio {
+        padding: 2rem 1.5rem;
+    }
+    
+    .premios-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .seccion-premios {
+        padding: 1.5rem 0.75rem;
+    }
+    
+    .categoria-premio {
+        padding: 1.5rem 1rem;
+    }
+    
+    .tarjeta-premio {
+        padding: 1.5rem 1rem;
+    }
+    
+    .icono-premio {
+        font-size: 3.5rem;
+    }
+    
+    .inicio a {
+        padding: 1.2rem 2rem;
+    }
+    
+    .premios-stats {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================
+   ANIMACIONES
+   ============================================ */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+}
+
+.tarjeta-premio {
+    animation: fadeIn 0.6s ease-out backwards;
+}
+
+.tarjeta-premio:nth-child(1) { animation-delay: 0.1s; }
+.tarjeta-premio:nth-child(2) { animation-delay: 0.2s; }
+.tarjeta-premio:nth-child(3) { animation-delay: 0.3s; }
+
+/* Loading Animation */
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+.tarjeta-premio.loading {
+    background: linear-gradient(
+        90deg,
+        #f0f0f0 0px,
+        #f8f8f8 40px,
+        #f0f0f0 80px
+    );
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite;
+}

@@ -1,0 +1,367 @@
+/* ============================================
+   MIS RECICLAJES
+   ============================================ */
+
+.reciclajes-container {
+    width: 100%;
+    background: linear-gradient(135deg, #f5f9f5 0%, #e8f5e9 100%);
+    min-height: 100vh;
+}
+
+.reciclajes-hero {
+    background: linear-gradient(135deg, var(--primary-green), var(--hover-green));
+    padding: 3rem 2rem;
+    text-align: center;
+    color: white;
+}
+
+.reciclajes-hero h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.reciclajes-hero p {
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.reciclajes-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.stat-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    transition: var(--transition);
+    border-left: 5px solid;
+}
+
+.stat-card.green { border-left-color: #28a745; }
+.stat-card.yellow { border-left-color: #ffc107; }
+.stat-card.blue { border-left-color: #17a2b8; }
+.stat-card.purple { border-left-color: #6f42c1; }
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.stat-card .stat-icon {
+    font-size: 3rem;
+}
+
+.stat-info h3 {
+    color: var(--text-gray);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.stat-info .stat-number {
+    color: var(--text-dark);
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* Materiales Section */
+.materiales-section {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    margin-bottom: 2rem;
+}
+
+.materiales-section h2 {
+    color: var(--primary-green);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.materiales-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.material-card {
+    text-align: center;
+}
+
+.material-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.material-card h3 {
+    color: var(--text-dark);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.progress-bar {
+    height: 10px;
+    background: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-green), var(--hover-green));
+    transition: width 1s ease;
+}
+
+.material-card p {
+    color: var(--text-gray);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* Historial Section */
+.historial-section {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    margin-bottom: 2rem;
+}
+
+.historial-section h2 {
+    color: var(--primary-green);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.tabla-container {
+    overflow-x: auto;
+    margin-bottom: 2rem;
+}
+
+.reciclajes-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.reciclajes-table thead {
+    background: var(--bg-light);
+}
+
+.reciclajes-table th {
+    padding: 1rem;
+    text-align: left;
+    color: var(--text-dark);
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.reciclajes-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #f0f0f0;
+    color: var(--text-gray);
+}
+
+.reciclajes-table tbody tr:hover {
+    background: rgba(47, 169, 25, 0.03);
+}
+
+.material-badge {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    background: var(--primary-green);
+    color: white;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.puntos-cell {
+    color: var(--primary-green);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.empty-notice {
+    background: #fff3cd;
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.empty-notice p {
+    color: #856404;
+    margin-bottom: 1rem;
+}
+
+/* Impacto Section */
+.impacto-section {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    margin-bottom: 2rem;
+}
+
+.impacto-section h2 {
+    color: var(--primary-green);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.impacto-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.impacto-card {
+    text-align: center;
+    padding: 2rem;
+    background: var(--bg-light);
+    border-radius: 15px;
+    transition: var(--transition);
+}
+
+.impacto-card:hover {
+    transform: scale(1.05);
+    background: rgba(47, 169, 25, 0.05);
+}
+
+.impacto-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.impacto-card h3 {
+    color: var(--primary-green);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.impacto-card p {
+    color: var(--text-gray);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* Actions Section */
+.actions-section {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.actions-section .btn {
+    padding: 1rem 2.5rem;
+    border-radius: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-green), var(--hover-green));
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(47, 169, 25, 0.3);
+}
+
+.btn-secondary {
+    background: white;
+    color: var(--primary-green);
+    border: 2px solid var(--primary-green);
+}
+
+.btn-secondary:hover {
+    background: rgba(47, 169, 25, 0.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .reciclajes-content {
+        padding: 2rem 1rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stat-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .materiales-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .materiales-section,
+    .historial-section,
+    .impacto-section {
+        padding: 1.5rem;
+    }
+    
+    .impacto-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .actions-section {
+        flex-direction: column;
+    }
+    
+    .actions-section .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .materiales-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .impacto-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .reciclajes-table {
+        font-size: 0.85rem;
+    }
+    
+    .reciclajes-table th,
+    .reciclajes-table td {
+        padding: 0.75rem 0.5rem;
+    }
+}
